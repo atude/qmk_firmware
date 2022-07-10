@@ -1,0 +1,6 @@
+{
+	"C_Cpp.dimInactiveRegions": false,
+	"files.associations": {
+		"render_gif.h": "c"
+	}
+}

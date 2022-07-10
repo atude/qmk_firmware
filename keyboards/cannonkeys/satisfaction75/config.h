@@ -77,9 +77,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // OLED_TIMEOUT is incompatible with the OLED_OFF mode
 #define OLED_TIMEOUT 0
 
-// OLED timeout reimplemented in the keyboard-specific code
-#define CUSTOM_OLED_TIMEOUT 60000
-
 // Custom config starts after VIA's EEPROM usage,
 // dynamic keymaps start after this.
 // Custom config Usage:
@@ -87,7 +84,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // 1 for custom backlighting controls (1 byte)
 // 1 for OLED default mode (1 byte)
 // 6 for 3x custom encoder settings, left, right, and press (18 bytes)
-#define VIA_EEPROM_CUSTOM_CONFIG_SIZE 21
+// 1 for atude oled mode
+// 1 for bongo mode
+// 1 for kirby/luna mode
+// 1 for time display mode
+// 1 for timeout
+// 1 for date and time format
+#define VIA_EEPROM_CUSTOM_CONFIG_SIZE 27 // default: 21
 
 // VIA lighting is handled by the keyboard-level code
 #define VIA_CUSTOM_LIGHTING_ENABLE
@@ -98,12 +101,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 /* disable debug print */
-//#define NO_DEBUG
+// #define NO_DEBUG
 
 /* disable print */
-//#define NO_PRINT
+// #define NO_PRINT
 
 /* disable action features */
 //#define NO_ACTION_LAYER
 //#define NO_ACTION_TAPPING
-//#define NO_ACTION_ONESHOT
+#define NO_ACTION_ONESHOT
+//#define NO_ACTION_MACRO
+// #define NO_ACTION_FUNCTION
