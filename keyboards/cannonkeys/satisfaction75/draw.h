@@ -1,5 +1,9 @@
-#include <stdio.h>
+#pragma once
+
+#include "satisfaction75.h"
+#include "helpers.h"
 #include "font.h"
+#include <stdio.h>
 
 #define min(x, y) (((x) >= (y)) ? (y) : (x))
 #define draw_pixel(x, y, on) oled_write_pixel(x, y, on)
@@ -8,19 +12,19 @@
  * Generic helpers
  */
 
-static void draw_line_h(uint8_t x, uint8_t y, uint8_t len) {
+void draw_line_h(uint8_t x, uint8_t y, uint8_t len) {
     for (uint8_t i = 0; i < len; i++) {
         oled_write_pixel(i + x, y, true);
     }
 }
 
-static void draw_line_v(uint8_t x, uint8_t y, uint8_t len, bool on) {
+void draw_line_v(uint8_t x, uint8_t y, uint8_t len, bool on) {
     for (uint8_t i = 0; i < len; i++) {
         oled_write_pixel(x, i + y, on);
     }
 }
 
-static void draw_rectangle(uint8_t x, uint8_t y, uint8_t x_len, uint8_t y_len, bool on) {
+void draw_rectangle(uint8_t x, uint8_t y, uint8_t x_len, uint8_t y_len, bool on) {
     for (uint8_t i = 0; i < x_len; i++) {
         for (uint8_t j = 0; j < y_len; j++) {
             oled_write_pixel(i + x, j + y, on);
@@ -29,7 +33,7 @@ static void draw_rectangle(uint8_t x, uint8_t y, uint8_t x_len, uint8_t y_len, b
 }
 
 // Draws from bottom y to top y. Only cursor x controllable
-static void draw_wpm_bar(uint8_t cursor_x, uint8_t wpm, char* date) {
+void draw_wpm_bar(uint8_t cursor_x, uint8_t wpm, char* date) {
     uint8_t x     = (cursor_x * 5) + cursor_x - 1;
     uint8_t y     = 5;
     uint8_t y_len = min(wpm / 6, 24);
@@ -51,10 +55,10 @@ static void draw_wpm_bar(uint8_t cursor_x, uint8_t wpm, char* date) {
     oled_set_cursor(cursor_x, 2);
     oled_write(date_second_section, wpm > 145);
 
-    draw_line_h(x - 2, y - 2, 17);
-    draw_line_h(x - 3, y - 1, 19);
-    draw_line_h(x - 3, y + 24, 19);
-    draw_line_h(x - 2, y + 25, 17);
+    // draw_line_h(x - 2, y - 2, 17);
+    // draw_line_h(x - 3, y - 1, 19);
+    // draw_line_h(x - 3, y + 24, 19);
+    // draw_line_h(x - 2, y + 25, 17);
 }
 
 /**
@@ -62,7 +66,7 @@ static void draw_wpm_bar(uint8_t cursor_x, uint8_t wpm, char* date) {
  */
 
 // Mods square (S, C, A, G)
-static void draw_mods_square(uint8_t mod_state, int8_t enc_turn_state, bool show_enc_turn, uint8_t cursor_x, uint8_t cursor_y) {
+void draw_mods_square(uint8_t mod_state, int8_t enc_turn_state, bool show_enc_turn, uint8_t cursor_x, uint8_t cursor_y) {
     uint8_t x = (cursor_x * 5) + cursor_x - 1;
     uint8_t y = cursor_y * 8;
     oled_set_cursor(cursor_x, cursor_y);
@@ -89,7 +93,7 @@ static void draw_mods_square(uint8_t mod_state, int8_t enc_turn_state, bool show
 }
 
 // Info panel (vol, caps, layer) - horizontal line
-static void draw_info_panel(led_t led_state, uint8_t layer_state, char* enc_mode, uint8_t cursor_x, uint8_t cursor_y, bool is_long_caps) {
+void draw_info_panel(led_t led_state, uint8_t layer_state, char* enc_mode, uint8_t cursor_x, uint8_t cursor_y, bool is_long_caps) {
     uint8_t x               = (cursor_x * 5) + cursor_x - 1;
     uint8_t y               = cursor_y * 8;
     uint8_t long_caps_x_add = is_long_caps ? 6 : 0;
@@ -125,42 +129,47 @@ static void draw_info_panel(led_t led_state, uint8_t layer_state, char* enc_mode
     }
 }
 
-// Draw a set of pixels within defined bounds; pixels are defined as a 2D array of 0s and 1s
-static void draw_clock_digit(uint8_t x_start, uint8_t y_start, uint8_t pixels[CLOCK_FONT_ROWS][CLOCK_FONT_COLS]) {
-    for (uint8_t i = 0; i < CLOCK_FONT_COLS; i++) {
-        for (uint8_t j = 0; j < CLOCK_FONT_ROWS; j++) {
-            uint8_t x = i + x_start;
-            uint8_t y = j + y_start;
-            draw_pixel(x, y, pixels[j][i] == 1);
+// Used in pets and gifs mode - generic details
+void draw_details_panel(bool as_overlay) {
+    if (!as_overlay || (as_overlay && (get_mods() & MOD_MASK_CTRL))) {
+        led_t led_state = host_keyboard_led_state();
+
+        // BG box
+        if (as_overlay) {
+            draw_rectangle(71, 0, 58, 32, false);
+            draw_line_v(70, 1, 31, false);
+            draw_line_v(69, 2, 30, false);
+            draw_line_v(68, 3, 29, false);
+            draw_line_v(67, 5, 27, false);
+            draw_line_v(66, 8, 24, false);
+            draw_line_v(65, 13, 19, false);
         }
+
+        switch (date_time_mode) {
+            default:
+            case 0:
+                oled_set_cursor(is_24hr_time() ? 16 : 14, 1);
+                oled_write(get_time(), false);
+                break;
+            case 1:
+                oled_set_cursor(13, 1);
+                oled_write(get_date(false), false);
+                break;
+            case 2:
+                break;
+        }
+
+        if (led_state.caps_lock) {
+            oled_set_cursor(12, 3);
+            oled_write_P(PSTR("CAPS"), false);
+        } else {
+            oled_set_cursor(13, 3);
+            oled_write(get_enc_mode(), false);
+        }
+        oled_write_P(PSTR("   L"), false);
+        draw_line_v(104, 24, 8, true);
+        oled_write_char(get_highest_layer(layer_state) + 0x30, false);
     }
 }
 
-// Big clock
-static void draw_big_clock(uint16_t last_minute, uint8_t x, uint8_t y, bool is_24hr) {
-    uint8_t  hour         = last_minute / 60;
-    uint16_t minute       = last_minute % 60;
-    uint8_t  digit_w      = 10;
-    bool     is_pm        = (hour / 12) > 0;
 
-    if (!is_24hr) {
-        hour = hour % 12;
-        if (hour == 0) {
-            hour = 12;
-        }
-    }
-
-    // hh
-    draw_clock_digit(x, y, clock_font[(int)(hour / 10)]);
-    draw_clock_digit(x + digit_w, y, hour == 24 ? clock_font[0] : clock_font[hour % 10]);
-    // colon
-    draw_clock_digit(x + digit_w * 2, y, clock_font[13]);
-    // // mm
-    draw_clock_digit(x + digit_w * 3, y, minute == 60 ? clock_font[0] : clock_font[(int)(minute / 10)]);
-    draw_clock_digit(x + digit_w * 4, y, clock_font[minute % 10]);
-
-    if (!is_24hr) {
-        draw_clock_digit(x + digit_w * 5, y, clock_font[is_pm ? 11 : 10]);
-        draw_clock_digit(x + digit_w * 6, y, clock_font[12]);
-    }
-}

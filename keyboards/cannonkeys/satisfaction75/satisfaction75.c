@@ -12,6 +12,8 @@
 #include "eeprom.h"
 #include "version.h"  // for QMK_BUILDDATE used in EEPROM magic
 
+#include "atyu_config.h"
+
 /* Artificial delay added to get media keys to work in the encoder*/
 #define MEDIA_KEY_DELAY 5
 
@@ -23,8 +25,9 @@ uint8_t layer;
 
 bool     clock_set_mode         = false;
 uint8_t  oled_mode              = OLED_DEFAULT;
-uint8_t  pet_mode               = PET_LUNA;
-uint8_t  bongo_mode             = 0;  // 0 = outline, 1 = filled
+#if OLED_PETS_ENABLED
+uint8_t  pet_mode               = 0;
+#endif
 uint8_t  date_time_mode         = 0;  // 0 = time, 1 = date, 2 = none
 uint8_t  timeout_mode           = 0;  // 0 = 1m30s, 1 = 2m, 2 = 5m, 3 = 1m
 uint8_t  date_time_format_mode  = 0;  // 0 = 12h dd/mm, 1 = 12h mm/dd, 2 = 24h dd/mm, 3 = 24hh mm/dd
@@ -237,24 +240,22 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             break;
         case KC_F23:
             if (record->event.pressed) {
+#if OLED_PETS_ENABLED
                 if (oled_mode == OLED_PETS) {
                     pet_mode = (pet_mode + 1) % _NUM_PET_MODES;
                     eeprom_update_byte((uint8_t *)EEPROM_ATUDE_PET_MODE, pet_mode);
-                } else if (oled_mode == OLED_BONGO) {
-                    bongo_mode = (bongo_mode + 1) % 2;
-                    eeprom_update_byte((uint8_t *)EEPROM_ATUDE_BONGO_MODE, bongo_mode);
                 }
+#endif
             }
             break;
         case KC_F24:
             if (record->event.pressed) {
+#if OLED_PETS_ENABLED
                 if (oled_mode == OLED_PETS) {
                     pet_mode = (pet_mode - 1 < 0) ? _NUM_PET_MODES - 1 : (pet_mode - 1) % _NUM_PET_MODES;
                     eeprom_update_byte((uint8_t *)EEPROM_ATUDE_PET_MODE, pet_mode);
-                } else if (oled_mode == OLED_BONGO) {
-                    bongo_mode = (bongo_mode + 1) % 2;
-                    eeprom_update_byte((uint8_t *)EEPROM_ATUDE_BONGO_MODE, bongo_mode);
                 }
+#endif
             }
             break;
         case OLED_TOGG:
@@ -380,8 +381,9 @@ void custom_config_load() {
     kb_backlight_config.raw = eeprom_read_byte((uint8_t *)EEPROM_CUSTOM_BACKLIGHT);
 #ifdef DYNAMIC_KEYMAP_ENABLE
     oled_mode             = eeprom_read_byte((uint8_t *)EEPROM_ATUDE_OLED_MODE);
-    bongo_mode            = eeprom_read_byte((uint8_t *)EEPROM_ATUDE_BONGO_MODE);
+#if OLED_PETS_ENABLED
     pet_mode              = eeprom_read_byte((uint8_t *)EEPROM_ATUDE_PET_MODE);
+#endif
     date_time_mode        = eeprom_read_byte((uint8_t *)EEPROM_ATUDE_DATETIME_MODE);
     timeout_mode          = eeprom_read_byte((uint8_t *)EEPROM_ATUDE_TIMEOUT_MODE);
     date_time_format_mode = eeprom_read_byte((uint8_t *)EEPROM_ATUDE_DATE_TIME_FORMAT_MODE);

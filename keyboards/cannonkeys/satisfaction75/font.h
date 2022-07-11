@@ -1,4 +1,9 @@
+#pragma once
+
 #include <stdio.h>
+#include <atyu_config.h>
+
+#if OLED_CLOCK_ENABLED
 
 #define CLOCK_FONT_ROWS 14
 #define CLOCK_FONT_COLS 8
@@ -230,3 +235,5 @@ static uint8_t clock_font[14][CLOCK_FONT_ROWS][CLOCK_FONT_COLS] = {
         {0, 0, 0, 0, 0, 0, 0, 0},
     },
 };
+
+#endif

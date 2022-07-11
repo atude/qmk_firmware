@@ -1,6 +1,16 @@
 {
 	"C_Cpp.dimInactiveRegions": false,
 	"files.associations": {
-		"render_gif.h": "c"
+		"render_gif.h": "c",
+		"draw_big_clock.h": "c",
+		"draw.h": "c",
+		"draw_bongo.h": "c",
+		"satisfaction75.h": "c",
+		"atyu_config.h": "c",
+		"helpers.h": "c",
+		"global.h": "c",
+		"font.h": "c",
+		"draw_pusheen.h": "c",
+		"draw_pets.h": "c"
 	}
 }
