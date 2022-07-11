@@ -2,7 +2,6 @@
 #include "draw.h"
 #include "global.h"
 #include "helpers.h"
-#include "render_gif.h"
 #include "atyu_config.h"
 #include <stdio.h>
 
@@ -15,11 +14,12 @@
 #if OLED_PETS_ENABLED
 #include "components/draw_pets.h"
 #endif
+#if OLED_GIF_ENABLED
+#include "components/draw_gif.h"
+#endif
 
 void draw_settings(void);  // set time/date and settings
 void draw_matrix(void);
-void draw_kirby(void);
-void draw_details_panel(bool as_overlay);
 
 #ifdef OLED_ENABLE
 
@@ -133,6 +133,11 @@ bool oled_task_kb(void) {
 #if OLED_PETS_ENABLED
         case OLED_PETS:
             draw_current_pet();
+            break;
+#endif
+#if OLED_GIF_ENABLED
+        case OLED_GIF:
+            draw_gif();
             break;
 #endif
     }
