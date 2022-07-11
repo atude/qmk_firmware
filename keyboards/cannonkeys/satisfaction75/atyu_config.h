@@ -13,39 +13,6 @@
 #define ANIM_GIF_SPEED 100
 #define GIF_LENGTH 72
 
-enum oled_modes {
-    OLED_DEFAULT,
-#if OLED_CLOCK_ENABLED
-    OLED_CLOCK,
-#endif
-#if OLED_BONGO_ENABLED
-    OLED_BONGO,
-#endif
-#if OLED_PETS_ENABLED
-    OLED_PETS,
-#endif
-#if OLED_GIF_ENABLED
-    OLED_GIF,
-#endif
-    OLED_OFF,
-    _NUM_OLED_MODES
-};
-
-#if OLED_PETS_ENABLED
-enum pet_modes {
-#if OLED_PET_LUNA_ENABLED
-    PET_LUNA,
-#endif
-#if OLED_PET_KIRBY_ENABLED
-    PET_KIRBY,
-#endif
-#if OLED_PET_PUSHEEN_ENABLED
-    PET_PUSHEEN,
-#endif
-    _NUM_PET_MODES,
-};
-#endif
-
 static const char PROGMEM gif[GIF_LENGTH][512] = {
         {
             0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,

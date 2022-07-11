@@ -59,6 +59,39 @@ enum encoder_modes {
 
 enum custom_encoder_behavior { ENC_CUSTOM_CW = 0, ENC_CUSTOM_CCW, ENC_CUSTOM_PRESS };
 
+enum oled_modes {
+    OLED_DEFAULT,
+#if OLED_CLOCK_ENABLED
+    OLED_CLOCK,
+#endif
+#if OLED_BONGO_ENABLED
+    OLED_BONGO,
+#endif
+#if OLED_PETS_ENABLED
+    OLED_PETS,
+#endif
+#if OLED_GIF_ENABLED
+    OLED_GIF,
+#endif
+    OLED_OFF,
+    _NUM_OLED_MODES
+};
+
+#if OLED_PETS_ENABLED
+enum pet_modes {
+#if OLED_PET_LUNA_ENABLED
+    PET_LUNA,
+#endif
+#if OLED_PET_KIRBY_ENABLED
+    PET_KIRBY,
+#endif
+#if OLED_PET_PUSHEEN_ENABLED
+    PET_PUSHEEN,
+#endif
+    _NUM_PET_MODES,
+};
+#endif
+
 // Keyboard Information
 extern volatile uint8_t led_numlock;
 extern volatile uint8_t led_capslock;
