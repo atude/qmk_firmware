@@ -18,7 +18,7 @@ void draw_gif(void) {
 		}
 	}
 
-	if (timer_elapsed32(gif_anim_timer) > ANIM_GIF_SPEED) {
+	if (timer_elapsed32(gif_anim_timer) > ATYU_ANIM_GIF_SPEED) {
 		gif_anim_timer = timer_read32();
 		animate_gif();
 	}
