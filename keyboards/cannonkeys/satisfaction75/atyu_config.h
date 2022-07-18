@@ -6,12 +6,13 @@
 #define OLED_CLOCK_ENABLED false
 #define OLED_BONGO_ENABLED true
 #define OLED_PETS_ENABLED true
-#define OLED_GIF_ENABLED false
 #define OLED_BONGO_FILLED false
 #define OLED_PET_LUNA_ENABLED true
 #define OLED_PET_KIRBY_ENABLED false
 #define OLED_PET_PUSHEEN_ENABLED true
-#define ATYU_ANIM_GIF_SPEED 100
+
+#define ATYU_OLED_GIF_ENABLED false
+#define ANIM_GIF_SPEED 100
 #define GIF_LENGTH 72
 
 static const char PROGMEM gif[GIF_LENGTH][512] = {

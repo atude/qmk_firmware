@@ -14,7 +14,7 @@
 #if OLED_PETS_ENABLED
 #include "components/draw_pets.h"
 #endif
-#if OLED_GIF_ENABLED
+#if ATYU_OLED_GIF_ENABLED
 #include "components/draw_gif.h"
 #endif
 
@@ -135,7 +135,7 @@ bool oled_task_kb(void) {
             draw_current_pet();
             break;
 #endif
-#if OLED_GIF_ENABLED
+#if ATYU_OLED_GIF_ENABLED
         case OLED_GIF:
             draw_gif();
             break;

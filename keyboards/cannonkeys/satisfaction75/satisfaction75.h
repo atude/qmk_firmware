@@ -70,7 +70,7 @@ enum oled_modes {
 #if OLED_PETS_ENABLED
     OLED_PETS,
 #endif
-#if OLED_GIF_ENABLED
+#if ATYU_OLED_GIF_ENABLED
     OLED_GIF,
 #endif
     OLED_OFF,
