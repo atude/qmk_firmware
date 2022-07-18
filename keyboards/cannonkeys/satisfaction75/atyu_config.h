@@ -12,7 +12,7 @@
 #define OLED_PET_PUSHEEN_ENABLED true
 
 #define ATYU_OLED_GIF_ENABLED false
-#define ANIM_GIF_SPEED 100
+#define ATYU_ANIM_GIF_SPEED 100
 #define GIF_LENGTH 72
 
 static const char PROGMEM gif[GIF_LENGTH][512] = {
