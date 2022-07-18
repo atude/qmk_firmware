@@ -167,6 +167,7 @@ bool oled_task_needs_to_repaint(void) {
         oled_wakeup_requested  = false;
         oled_repaint_requested = false;
         oled_off();
+        backlight_set(0);
         return false;
     }
 
@@ -176,6 +177,7 @@ bool oled_task_needs_to_repaint(void) {
         oled_repaint_requested = false;
         oled_sleep_timer       = timer_read32() + get_timeout();
         oled_on();
+        backlight_set(kb_backlight_config.level);
         return true;
     }
 
@@ -195,6 +197,7 @@ bool oled_task_needs_to_repaint(void) {
     // If the sleep timer has expired while the OLED was on, turn the OLED off.
     if (timer_expired32(timer_read32(), oled_sleep_timer)) {
         oled_off();
+        backlight_set(0);
         return false;
     }
 
