@@ -5,12 +5,5 @@
         "qmkKb": "cannonkeys/satisfaction75/rev1",
         "qmkKm": "via",
         "dir": "keyboards/cannonkeys/satisfaction75/"
-    },
-    "test": {
-        "key": "test",
-        "name": "TEST",
-        "qmkKb": "cannonkeys/satisfaction75/rev1",
-        "qmkKm": "via",
-        "dir": "keyboards/cannonkeys/satisfaction75/"
     }
 }
