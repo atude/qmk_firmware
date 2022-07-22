@@ -1,7 +1,7 @@
 #pragma once
 
 #include "global.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 #    define PUSHEEN_IDLE_FRAME_DURATION 1000

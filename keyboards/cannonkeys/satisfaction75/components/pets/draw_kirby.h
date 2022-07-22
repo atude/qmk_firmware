@@ -4,7 +4,7 @@
 #include "draw.h"
 #include "global.h"
 #include "../frames/kirby.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 uint8_t kirby_current_idle_frame      = 0;

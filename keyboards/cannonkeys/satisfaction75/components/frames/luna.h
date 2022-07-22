@@ -1,7 +1,7 @@
 #pragma once
 
 #include "global.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 #    define LUNA_MIN_WALK_SPEED 10

@@ -1,0 +1,16 @@
+{
+    "satisfaction75": {
+        "key": "satisfaction75",
+        "name": "Satisfaction75",
+        "qmkKb": "cannonkeys/satisfaction75/rev1",
+        "qmkKm": "via",
+        "dir": "keyboards/cannonkeys/satisfaction75"
+    },
+    "TEST": {
+        "key": "test",
+        "name": "TEST",
+        "qmkKb": "cannonkeys/satisfaction75/rev1",
+        "qmkKm": "via",
+        "dir": "keyboards/cannonkeys/satisfaction75"
+    }
+}

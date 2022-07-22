@@ -3,7 +3,7 @@
 #include "satisfaction75.h"
 #include "draw.h"
 #include "helpers.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 #ifdef OLED_CLOCK_ENABLED

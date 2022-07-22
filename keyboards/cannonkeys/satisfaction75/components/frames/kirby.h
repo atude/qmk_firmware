@@ -1,7 +1,7 @@
 #pragma once
 
 #include "global.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 #    define KIRBY_WALK_FRAME_DURATION 150

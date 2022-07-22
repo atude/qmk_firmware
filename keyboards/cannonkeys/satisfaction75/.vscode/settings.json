@@ -6,7 +6,7 @@
 		"draw.h": "c",
 		"draw_bongo.h": "c",
 		"satisfaction75.h": "c",
-		"atyu_config.h": "c",
+		"atyu.h": "c",
 		"helpers.h": "c",
 		"global.h": "c",
 		"font.h": "c",

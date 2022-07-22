@@ -12,7 +12,7 @@
 #include "eeprom.h"
 #include "version.h"  // for QMK_BUILDDATE used in EEPROM magic
 
-#include "atyu_config.h"
+#include "atyu.h"
 
 /* Artificial delay added to get media keys to work in the encoder*/
 #define MEDIA_KEY_DELAY 5

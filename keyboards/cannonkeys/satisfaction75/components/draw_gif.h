@@ -3,7 +3,7 @@
 #include "satisfaction75.h"
 #include "draw.h"
 #include "global.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 uint32_t gif_anim_timer = 0;

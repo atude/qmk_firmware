@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Keyboard Matrix",
+        "desc": "",
+        "key": "",
+        "configurable": false,
+        "enabledByDefault": true,
+        "children": []
+    },
+    {
+        "name": "Big Clock",
+        "desc": "",
+        "key": "OLED_CLOCK_ENABLED",
+        "configurable": true,
+        "enabledByDefault": true,
+        "children": []
+    },
+    {
+        "name": "Bongo Cat",
+        "desc": "",
+        "key": "OLED_BONGO_ENABLED",
+        "configurable": true,
+        "enabledByDefault": false,
+        "children": [
+            {
+                "name": "Use filled bongo cat",
+                "struct": {
+                    "type": "switch",
+                    "key": "OLED_BONGO_FILLED",
+                    "defaultValue": false
+                }
+            }
+        ]
+    },
+    {
+        "name": "Pets Mode",
+        "desc": "",
+        "key": "OLED_PETS_ENABLED",
+        "configurable": true,
+        "enabledByDefault": false,
+        "children": [
+            {
+                "name": "Choose your pets",
+                "desc": "put controls here",
+                "struct": {
+                    "type": "multiselect_boolean",
+                    "multiselectStruct": [
+                        {
+                            "name": "Luna",
+                            "key": "OLED_PET_LUNA_ENABLED",
+                            "defaultValue": true
+                        },
+                        {
+                            "name": "Kirby",
+                            "key": "OLED_PET_KIRBY_ENABLED",
+                            "defaultValue": false
+                        },
+                        {
+                            "name": "Pusheen",
+                            "key": "OLED_PET_PUSHEEN_ENABLED",
+                            "defaultValue": true
+                        }
+                    ],
+                    "multiselectOptions": { "max": 3 }
+                }
+            }
+        ]
+    },
+    {
+        "name": "Custom Gif",
+        "desc": "Have a separate mode to show a looping GIF.",
+        "key": "ATYU_OLED_GIF_ENABLED",
+        "configurable": true,
+        "enabledByDefault": false,
+        "children": [
+            {
+                "name": "Upload a GIF",
+                "struct": { "type": "update_gif", "defaultGifSpeed": 100 }
+            }
+        ]
+    }
+]

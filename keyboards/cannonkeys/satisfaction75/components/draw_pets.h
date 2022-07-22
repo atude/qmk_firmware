@@ -2,7 +2,7 @@
 #include "pets/draw_luna.h"
 #include "pets/draw_kirby.h"
 #include "pets/draw_pusheen.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 void draw_current_pet(void) {

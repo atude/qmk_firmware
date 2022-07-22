@@ -2,7 +2,7 @@
 #include "draw.h"
 #include "global.h"
 #include "helpers.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 #if OLED_CLOCK_ENABLED

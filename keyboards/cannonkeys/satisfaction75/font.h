@@ -1,7 +1,7 @@
 #pragma once
 
 #include <stdio.h>
-#include <atyu_config.h>
+#include <atyu.h>
 
 #if OLED_CLOCK_ENABLED
 

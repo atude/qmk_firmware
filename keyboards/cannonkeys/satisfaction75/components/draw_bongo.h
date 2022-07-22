@@ -4,7 +4,7 @@
 #include "draw.h"
 #include "global.h"
 #include "helpers.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include "frames/bongo.h"
 #include <stdio.h>
 

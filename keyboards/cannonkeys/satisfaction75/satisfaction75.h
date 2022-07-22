@@ -1,7 +1,7 @@
 #pragma once
 
 #include "quantum.h"
-#include "atyu_config.h"
+#include "atyu.h"
 
 #ifdef KEYBOARD_cannonkeys_satisfaction75_prototype
 #    include "prototype.h"

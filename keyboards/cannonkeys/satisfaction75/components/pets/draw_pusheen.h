@@ -4,7 +4,7 @@
 #include "draw.h"
 #include "global.h"
 #include "../frames/pusheen.h"
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 uint8_t pusheen_current_frame = 0;

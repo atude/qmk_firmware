@@ -1,6 +1,6 @@
 #pragma once
 
-#include "atyu_config.h"
+#include "atyu.h"
 #include <stdio.h>
 
 #    define BONGO_SLEEP_FRAME_DURATION 1000
