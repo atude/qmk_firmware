@@ -34,14 +34,13 @@
     },
     {
         "name": "Pets Mode",
-        "desc": "",
+        "desc": "Pets and characters that move as you type and press special keys",
         "key": "OLED_PETS_ENABLED",
         "configurable": true,
         "enabledByDefault": false,
         "children": [
             {
                 "name": "Choose your pets",
-                "desc": "put controls here",
                 "struct": {
                     "type": "multiselect_boolean",
                     "multiselectStruct": [
@@ -68,7 +67,7 @@
     },
     {
         "name": "Custom Gif",
-        "desc": "Have a separate mode to show a looping GIF.",
+        "desc": "A looping GIF with an overlay panel on CTRL",
         "key": "ATYU_OLED_GIF_ENABLED",
         "configurable": true,
         "enabledByDefault": false,
