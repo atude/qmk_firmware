@@ -1,6 +1,6 @@
 # Atyu QMK Fork
 
-This is a fork of QMK used by Atyu to configrue OLED mods onto keyboards.
+This is a fork of QMK used by Atyu to configure OLED mods onto keyboards.
 
 ## Supported Keyboards
 
