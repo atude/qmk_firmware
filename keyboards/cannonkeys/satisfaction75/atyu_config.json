@@ -1,7 +1,7 @@
 [
     {
         "name": "Keyboard Matrix",
-        "desc": "",
+        "desc": "A visualisation of your key presses in the shape of a Satisfaction75",
         "key": "",
         "configurable": false,
         "enabledByDefault": true,
