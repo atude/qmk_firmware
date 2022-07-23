@@ -4,6 +4,7 @@
         "name": "Satisfaction75",
         "qmkKb": "cannonkeys/satisfaction75/rev1",
         "qmkKm": "via",
-        "dir": "keyboards/cannonkeys/satisfaction75/"
+        "dir": "keyboards/cannonkeys/satisfaction75/",
+        "maxFirmwareSizeBytes": 120000
     }
 }
