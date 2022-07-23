@@ -16,7 +16,7 @@
         "children": []
     },
     {
-        "name": "Bongo TEST Cat",
+        "name": "Bongo Cat",
         "desc": "",
         "key": "OLED_BONGO_ENABLED",
         "configurable": true,
