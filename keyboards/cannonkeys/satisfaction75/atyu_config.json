@@ -5,7 +5,10 @@
         "key": "",
         "configurable": false,
         "enabledByDefault": true,
-        "children": []
+        "children": [],
+        "notes": [
+            "Switch between time, date, and 'SAT75' text using F22 (mappable in VIA)"
+        ]
     },
     {
         "name": "Big Clock",
@@ -13,11 +16,15 @@
         "key": "OLED_CLOCK_ENABLED",
         "configurable": true,
         "enabledByDefault": true,
-        "children": []
+        "children": [],
+        "notes": [
+            "Also shows time, current layer, encoder mode and modifiers pressed",
+            "Includes a WPM bar with date"
+        ]
     },
     {
         "name": "Bongo Cat",
-        "desc": "",
+        "desc": "Bongo cat that taps when you type and interacts with mod keys",
         "key": "OLED_BONGO_ENABLED",
         "configurable": true,
         "enabledByDefault": false,
@@ -30,6 +37,11 @@
                     "defaultValue": false
                 }
             }
+        ],
+        "notes": [
+            "Also shows time, WPM, current layer and encoder mode",
+            "Interacts on caps lock, ctrl, winkey and OLED timeout",
+            "Switch between time, date, and no text using F22 (mappable in VIA)"
         ]
     },
     {
@@ -63,11 +75,18 @@
                     "multiselectOptions": { "max": 3 }
                 }
             }
+        ],
+        "notes": [
+            "Switch between pets using F23 and F24 (mappable in VIA)",
+            "Switch between time, date, and no text using F22 (mappable in VIA)",
+            "Luna: Interacts on WPM, ctrl, caps lock and space",
+            "Kirby: Interacts on WPM, ctrl, caps lock and space",
+            "Pusheen: Interacts randomly as you type, on caps lock and control, and before OLED timeout"
         ]
     },
     {
         "name": "Custom Gif",
-        "desc": "A looping GIF with an overlay panel on CTRL",
+        "desc": "A looping GIF with an overlay panel",
         "key": "ATYU_OLED_GIF_ENABLED",
         "configurable": true,
         "enabledByDefault": false,
@@ -76,6 +95,9 @@
                 "name": "Upload a GIF",
                 "struct": { "type": "update_gif", "defaultGifSpeed": 100 }
             }
+        ],
+        "notes": [
+            "Access overlay panel by holding ctrl"
         ]
     }
 ]
