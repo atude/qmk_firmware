@@ -4,6 +4,7 @@
 #include "draw.h"
 #include "global.h"
 #include "atyu.h"
+#include "atyu_resources.h"
 #include <stdio.h>
 
 uint32_t gif_anim_timer = 0;

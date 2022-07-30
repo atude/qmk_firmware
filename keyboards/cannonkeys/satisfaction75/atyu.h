@@ -1,5 +1,4 @@
 #pragma once
-#include <stdio.h>
 
 #define OLED_CLOCK_ENABLED true
 #define OLED_BONGO_ENABLED false
