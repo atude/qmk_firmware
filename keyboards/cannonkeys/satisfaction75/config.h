@@ -16,6 +16,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
+#include "atyu.h"
 
 /* Ensure we jump to bootloader if the RESET keycode was pressed */
 #define EARLY_INIT_PERFORM_BOOTLOADER_JUMP TRUE
@@ -76,6 +77,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // OLED_TIMEOUT is incompatible with the OLED_OFF mode
 #define OLED_TIMEOUT 0
+
+#ifdef KB_OPTIONS_POLLING_RATE
+#define USB_POLLING_INTERVAL_MS KB_OPTIONS_POLLING_RATE
+#endif
 
 // Custom config starts after VIA's EEPROM usage,
 // dynamic keymaps start after this.

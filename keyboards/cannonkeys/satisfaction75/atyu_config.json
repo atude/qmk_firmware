@@ -99,5 +99,41 @@
         "notes": [
             "Access overlay panel by holding ctrl"
         ]
+    },
+    {
+        "name": "Polling",
+        "desc": "",
+        "key": "__keyboard_options",
+        "configurable": false,
+        "enabledByDefault": true,
+        "children": [
+            {
+                "name": "Polling rate",
+                "desc": "Sets typing responsiveness. Lower is faster.",
+                "struct": {
+                    "type": "radio_number",
+                    "radioKey": "KB_OPTIONS_POLLING_RATE",
+                    "defaultValue": 1,
+                    "radioValues": [
+                        {
+                            "name": "1ms",
+                            "value": 1
+                        },
+                        {
+                            "name": "2ms",
+                            "value": 2
+                        },
+                        {
+                            "name": "5ms",
+                            "value": 5
+                        },
+                        {
+                            "name": "10ms",
+                            "value": 10
+                        }
+                    ]
+                }
+            }
+        ]
     }
 ]
