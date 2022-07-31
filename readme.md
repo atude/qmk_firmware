@@ -6,9 +6,11 @@ This is a fork of QMK used by Atyu to configure OLED (and other) mods for keyboa
 
 All supported keyboards are configured in the [atyu_home](/atyu_home.json) config. To add support for a keyboard, add a config for that file. Examples on how to make it can be taken from the file itself.
 
-## Documentation
+## How does Atyu work?
 
-TODO
+Atyu lets you expose flags to a GUI so users can configure parts of QMK that would otherwise need C/QMK knowledge. Users toggle a bunch of options and the app spits out `atyu.h` and `atyu_resources.h` files into the keyboards QMK folder. The flags and variables in these files can then be used to enable and disable premade mods. Each keyboard has its own config, so mods can be made specifically for each keyboard.  
+
+![]()
 
 ## Atyu for Devs - Add your own mod
 
