@@ -12,9 +12,7 @@ TODO
 
 ## Atyu for Devs
 
-The Atyu app reads a few configs that need to be updated in order to add mods to a certain keyboard:
-
-### atyu_config.json
+The main config Atyu reads is `atyu_config.json`. This should be defined inside the `keyboards/YOUR_KEYBOARD_NAME` folder. An example `atyu_config.json` can be found in [keyboards/cannonkeys/satisfaction75](https://github.com/atude/qmk_firmware/blob/master/keyboards/cannonkeys/satisfaction75/atyu_config.json).
 
 This is responsible for the UI that is constructed by the Atyu app. To add an option or mod visible and controllable by the app, you will need to add a section in  here. The schemas are defined [here](https://github.com/atude/atyu-app/blob/master/src/configs/atyuConfig.ts). The sections are split into top level sections that can only enable/disable flags, and child sections that allow for multiselecting flags, setting number values, and more.
 
