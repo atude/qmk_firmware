@@ -61,7 +61,7 @@ enum custom_encoder_behavior { ENC_CUSTOM_CW = 0, ENC_CUSTOM_CCW, ENC_CUSTOM_PRE
 
 enum oled_modes {
     OLED_DEFAULT,
-#if OLED_CLOCK_ENABLED
+#if OLED_BIG_CLOCK_ENABLED
     OLED_CLOCK,
 #endif
 #if OLED_BONGO_ENABLED

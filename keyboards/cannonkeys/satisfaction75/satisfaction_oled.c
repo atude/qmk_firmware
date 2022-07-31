@@ -5,7 +5,7 @@
 #include "atyu.h"
 #include <stdio.h>
 
-#if OLED_CLOCK_ENABLED
+#if OLED_BIG_CLOCK_ENABLED
 #include "components/draw_big_clock.h"
 #endif
 #if OLED_BONGO_ENABLED
@@ -119,7 +119,7 @@ bool oled_task_kb(void) {
             oled_clear();
             draw_matrix();
             break;
-#if OLED_CLOCK_ENABLED
+#if OLED_BIG_CLOCK_ENABLED
         case OLED_CLOCK:
             oled_clear();
             draw_big_clock(show_enc_turn);

@@ -6,7 +6,7 @@
 #include "atyu.h"
 #include <stdio.h>
 
-#ifdef OLED_CLOCK_ENABLED
+#ifdef OLED_BIG_CLOCK_ENABLED
 
 // Draw a set of pixels within defined bounds; pixels are defined as a 2D array of 0s and 1s
 void draw_clock_digit(uint8_t x_start, uint8_t y_start, uint8_t pixels[CLOCK_FONT_ROWS][CLOCK_FONT_COLS]) {

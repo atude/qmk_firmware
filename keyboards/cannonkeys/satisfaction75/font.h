@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <atyu.h>
 
-#if OLED_CLOCK_ENABLED
+#if OLED_BIG_CLOCK_ENABLED
 
 #define CLOCK_FONT_ROWS 14
 #define CLOCK_FONT_COLS 8
