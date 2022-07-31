@@ -10,7 +10,7 @@ All supported keyboards are configured in the [atyu_home](/atyu_home.json) confi
 
 TODO
 
-## Atyu for Devs
+## Atyu for Devs - Add your own mod
 
 The main config Atyu reads is `atyu_config.json`. This should be defined inside the `keyboards/YOUR_KEYBOARD_NAME` folder. An example `atyu_config.json` can be found in [keyboards/cannonkeys/satisfaction75](https://github.com/atude/qmk_firmware/blob/master/keyboards/cannonkeys/satisfaction75/atyu_config.json).
 
@@ -145,6 +145,6 @@ Example polling config that lets a user choose from a list of preset polling rat
 }
 ```
 
-WIP
+TODO thumbnails
 
 
