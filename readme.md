@@ -4,7 +4,7 @@ This is a fork of QMK used by Atyu to configure OLED mods onto keyboards.
 
 ## Supported Keyboards
 
-All supported keyboards are configured in the [atyu_home](/atyu_home.json) config.
+All supported keyboards are configured in the [atyu_home](/atyu_home.json) config. To add support for a keyboard, add a config for that file. Examples on how to make it can be taken from the file itself.
 
 ## Documentation
 
