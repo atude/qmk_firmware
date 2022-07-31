@@ -20,7 +20,6 @@ This is responsible for the UI that is constructed by the Atyu app. To add an op
 
 
 ##### Top level config
-
 | Key | Description | Values | Necesaary field? |
 ------|---------------|---------|--------------
 | `name` | The title of the mod | `string` | yes
@@ -32,7 +31,6 @@ This is responsible for the UI that is constructed by the Atyu app. To add an op
 | `children` | The subcomponents of this mod. More information about this in the child config section below | Array of child configs | yes
 
 ##### Child config
-
 | Key | Description | Values | Necesaary field? |
 ------|---------------|---------|----------
 | `name` | The title of the child section | `string` | yes
@@ -43,11 +41,23 @@ This is responsible for the UI that is constructed by the Atyu app. To add an op
 | Key | Description | Values | Necesaary field? |
 ------|---------------|---------|----------
 | `type` | N/A | The string `multiselect_boolean` | yes
-| `multiselectStruct` | An array of values for a set of flags you would like the user to choose. `key` should represent the flag that this multiselect option enables/disables | ```{ name: string, key: string, defaultValue: boolean }[]``` | yes
-| `multiselectOptions` | Optional settings for limits on your multiselect section | ```{ min: int, max: int }``` | no
+| `multiselectStruct` | An array of values for a set of flags you would like the user to choose. `key` should represent the flag that this multiselect option enables/disables | `{ name: string, key: string, defaultValue: boolean }[]` | yes
+| `multiselectOptions` | Optional settings for limits on your multiselect section | `{ min: int, max: int }` | no
 
+##### RadioNumber option
+| Key | Description | Values | Necesaary field? |
+------|---------------|---------|----------
+| `type` | N/A | The string `radio_number` | yes
+| `radioKey` | The flag that you will be setting a number value to | `string` | yes
+| `defaultValue` | The default number value the flag is set to | `int` | yes
+| `radioValues` | A list of options that the user can set this flag to | `{ name: string, value: int }[]` | yes
 
-
+##### Switch option
+| Key | Description | Values | Necesaary field? |
+------|---------------|---------|----------
+| `type` | N/A | The string `switch` | yes
+| `key` | The flag that the user can enable/disable | `string` | yes
+| `defaultValue` | The default boolean value the flag is set to | `boolean` | yes
 
 
 For example, to add an option to enable a flag called `OLED_ENABLE_SOME_MODE`, you will need to add a section like:
