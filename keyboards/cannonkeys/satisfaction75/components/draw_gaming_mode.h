@@ -27,80 +27,70 @@ void draw_gaming_mode(bool show_enc_turn) {
 
             if (on) {
                 if (matrix_is_on(2, 2)) { // w
-                    draw_rectangle(17, 10, 4, 8, true);
-                    draw_line_v(16, 11, 9, true);
-                    draw_line_v(21, 11, 9, true);
+                    draw_rectangle(14, 10, 4, 8, true);
+                    draw_line_v(13, 11, 9, true);
+                    draw_line_v(18, 11, 9, true);
+                    draw_pixel(14, 18, true);
                     draw_pixel(17, 18, true);
-                    draw_pixel(20, 18, true);
                 }
                 if (matrix_is_on(3, 1)) { // a
-                    draw_line_h(8, 20, 8);
-                    draw_line_h(7, 21, 8);
-                    draw_rectangle(7, 22, 7, 3, true);
+                    draw_line_h(5, 20, 8);
+                    draw_line_h(4, 21, 8);
+                    draw_rectangle(4, 22, 7, 3, true);
                 }
                 if (matrix_is_on(3, 2)) { // s
-                    draw_line_h(18, 19, 2);
-                    draw_line_h(17, 20, 4);
-                    draw_line_h(16, 21, 6);
-                    draw_rectangle(15, 22, 8, 4, true);
-                    draw_line_h(17, 26, 4);
-                    draw_line_h(18, 27, 2);
+                    draw_line_h(15, 19, 2);
+                    draw_line_h(14, 20, 4);
+                    draw_line_h(13, 21, 6);
+                    draw_rectangle(12, 22, 8, 4, true);
+                    draw_line_h(14, 26, 4);
+                    draw_line_h(15, 27, 2);
                 }
                 if (matrix_is_on(3, 3)) { // d
-                    draw_line_h(22, 20, 8);
-                    draw_line_h(23, 21, 8);
-                    draw_rectangle(24, 22, 7, 3, true);
+                    draw_line_h(19, 20, 8);
+                    draw_line_h(20, 21, 8);
+                    draw_rectangle(21, 22, 7, 3, true);
                 }
                 if (matrix_is_on(5, 5)) { // space
-                    draw_line_h(42, 16, 7);
-                    draw_line_h(41, 15, 9);
-                    draw_line_h(40, 14, 11);
-                    draw_line_h(41, 13, 9);
-                    draw_line_h(42, 12, 7);
-                    draw_line_h(43, 11, 5);
-                    draw_line_h(44, 10, 3);
-                    draw_line_h(45, 9, 1);
-                }
-                if (matrix_is_on(0, 2)) { // tab
-                    // draw_line_h(42, 16, 7);
-                    // draw_line_h(41, 15, 9);
-                    // draw_line_h(40, 14, 11);
-                    // draw_line_h(41, 13, 9);
-                    // draw_line_h(42, 12, 7);
-                    // draw_line_h(43, 11, 5);
-                    // draw_line_h(44, 10, 3);
-                    // draw_line_h(45, 9, 1);
+                    draw_line_h(39, 16, 7);
+                    draw_line_h(38, 15, 9);
+                    draw_line_h(37, 14, 11);
+                    draw_line_h(38, 13, 9);
+                    draw_line_h(39, 12, 7);
+                    draw_line_h(40, 11, 5);
+                    draw_line_h(41, 10, 3);
+                    draw_line_h(42, 9, 1);
                 }
             }
         }
     }
 
     if (mod_state & MOD_MASK_CTRL) {
-        draw_line_h(42, 20, 7);
-        draw_line_h(41, 21, 9);
-        draw_line_h(40, 22, 11);
-        draw_line_h(41, 23, 9);
-        draw_line_h(42, 24, 7);
-        draw_line_h(43, 25, 5);
-        draw_line_h(44, 26, 3);
-        draw_line_h(45, 27, 1);
+        draw_line_h(39, 20, 7);
+        draw_line_h(38, 21, 9);
+        draw_line_h(37, 22, 11);
+        draw_line_h(38, 23, 9);
+        draw_line_h(39, 24, 7);
+        draw_line_h(40, 25, 5);
+        draw_line_h(41, 26, 3);
+        draw_line_h(42, 27, 1);
     }
     if (mod_state & MOD_MASK_SHIFT) {
-        draw_pixel(6, 10, true);
-        draw_pixel(7, 9, true);
-        draw_pixel(8, 8, true);
-        draw_pixel(9, 9, true);
-        draw_pixel(10, 10, true);
+        draw_pixel(3, 10, true);
+        draw_pixel(4, 9, true);
+        draw_pixel(5, 8, true);
+        draw_pixel(6, 9, true);
+        draw_pixel(7, 10, true);
 
-        draw_pixel(6, 13, true);
-        draw_pixel(7, 12, true);
-        draw_pixel(8, 11, true);
-        draw_pixel(9, 12, true);
-        draw_pixel(10, 13, true);
+        draw_pixel(3, 13, true);
+        draw_pixel(4, 12, true);
+        draw_pixel(5, 11, true);
+        draw_pixel(6, 12, true);
+        draw_pixel(7, 13, true);
     } else if (tab_pressed) {
-        draw_rectangle_outline(5, 8, 7, 7);
-        draw_line_h(7, 10, 3);
-        draw_line_h(7, 12, 3);
+        draw_rectangle_outline(2, 8, 7, 7);
+        draw_line_h(4, 10, 3);
+        draw_line_h(4, 12, 3);
     }
 
     draw_mods_square(mod_state, enc_turn_state, show_enc_turn, 10, 1);
