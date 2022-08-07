@@ -32,33 +32,24 @@ void draw_rectangle(uint8_t x, uint8_t y, uint8_t x_len, uint8_t y_len, bool on)
     }
 }
 
+void draw_rectangle_outline(uint8_t x, uint8_t y, uint8_t x_len, uint8_t y_len) {
+    draw_line_h(x, y, x_len);
+    draw_line_h(x, y + y_len - 1, x_len);
+    draw_line_v(x, y, y_len, true);
+    draw_line_v(x + x_len - 1, y, y_len, true);
+}
+
 // Draws from bottom y to top y. Only cursor x controllable
-void draw_wpm_bar(uint8_t cursor_x, uint8_t wpm, char* date) {
+void draw_wpm_bar(uint8_t cursor_x, uint8_t wpm) {
     uint8_t x     = (cursor_x * 5) + cursor_x - 1;
     uint8_t y     = 5;
-    uint8_t y_len = min(wpm / 6, 24);
+    uint8_t y_len = min(wpm / 6, 31);
     for (uint8_t i = 0; i < 2; i++) {
         for (uint8_t j = 0; j < y_len; j++) {
-            oled_write_pixel(i + x + 14, 23 - j + y, true);
-            oled_write_pixel(i + x - 3, 23 - j + y, true);
+            oled_write_pixel(i + x, 26 - j + y, true);
+            oled_write_pixel(i + x + 1, 26 - j + y, true);
         }
     }
-
-    // Embed date in wpm bar
-    char date_first_section[3]  = {date[0], date[1], '\0'};
-    char date_second_section[3] = {date[3], date[4], '\0'};
-    if (wpm > 145) {
-        draw_rectangle(x - 1, y, 15, 28, true);
-    }
-    oled_set_cursor(cursor_x, 1);
-    oled_write(date_first_section, wpm > 145);
-    oled_set_cursor(cursor_x, 2);
-    oled_write(date_second_section, wpm > 145);
-
-    // draw_line_h(x - 2, y - 2, 17);
-    // draw_line_h(x - 3, y - 1, 19);
-    // draw_line_h(x - 3, y + 24, 19);
-    // draw_line_h(x - 2, y + 25, 17);
 }
 
 /**

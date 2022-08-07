@@ -7,6 +7,7 @@
 
 static uint32_t anim_timer    = 0;
 static bool     space_pressed = false;
+static bool     tab_pressed = false;
 
 // Dynamic variables specific to modes
 static uint8_t bongo_state_tap  = 0;

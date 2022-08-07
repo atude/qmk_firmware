@@ -22,7 +22,7 @@ void draw_clock_digit(uint8_t x_start, uint8_t y_start, uint8_t pixels[CLOCK_FON
 void draw_big_clock(bool show_enc_turn) {
     led_t   led_state = host_keyboard_led_state();
     uint8_t mod_state = get_mods();
-    uint8_t x = 4;
+    uint8_t x = 6;
     uint8_t y = 3;
     uint8_t  hour         = last_minute / 60;
     uint16_t minute       = last_minute % 60;
@@ -51,9 +51,13 @@ void draw_big_clock(bool show_enc_turn) {
         draw_clock_digit(x + digit_w * 6, y, clock_font[12]);
     }
 
-    draw_mods_square(mod_state, enc_turn_state, show_enc_turn, 1, 3);
-    draw_info_panel(led_state, layer_state, get_enc_mode(), 3, 3, true);
-    draw_wpm_bar(18, wpm(), get_date(false));
+    draw_mods_square(mod_state, enc_turn_state, show_enc_turn, 7, 3);
+    draw_info_panel(led_state, layer_state, get_enc_mode(), 9, 3, true);
+    draw_wpm_bar(0, wpm());
+    oled_set_cursor(1, 3);
+    char* date = get_date(false);
+    char date_section[6]  = {date[0], date[1], date[2], date[3], date[4], '\0'};
+    oled_write(date_section, false);
 };
 
 #endif

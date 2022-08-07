@@ -23,6 +23,17 @@
         ]
     },
     {
+        "name": "First Person Gaming Mode",
+        "desc": "Visuals for common FPS keys such as WASD, CTRL, tab, shift and space",
+        "key": "OLED_GAMING_MODE_ENABLED",
+        "configurable": true,
+        "enabledByDefault": false,
+        "children": [],
+        "notes": [
+            "Switch between time, date, and WPM using F22 (mappable in VIA)"
+        ]
+    },
+    {
         "name": "Bongo Cat",
         "desc": "Bongo cat that taps when you type and interacts with mod keys",
         "key": "OLED_BONGO_ENABLED",
@@ -40,7 +51,7 @@
         ],
         "notes": [
             "Also shows time, WPM, current layer and encoder mode",
-            "Interacts on caps lock, ctrl, winkey and OLED timeout",
+            "Interacts on caps lock, CTRL, winkey and OLED timeout",
             "Switch between time, date, and no text using F22 (mappable in VIA)"
         ]
     },
@@ -79,8 +90,8 @@
         "notes": [
             "Switch between pets using F23 and F24 (mappable in VIA)",
             "Switch between time, date, and no text using F22 (mappable in VIA)",
-            "Luna: Interacts on WPM, ctrl, caps lock and space",
-            "Kirby: Interacts on WPM, ctrl, caps lock and space",
+            "Luna: Interacts on WPM, CTRL, caps lock and space",
+            "Kirby: Interacts on WPM, CTRL, caps lock and space",
             "Pusheen: Interacts randomly as you type, on caps lock and control, and before OLED timeout"
         ]
     },
@@ -97,7 +108,7 @@
             }
         ],
         "notes": [
-            "Access overlay panel by holding ctrl"
+            "Access overlay panel by holding CTRL"
         ]
     },
     {

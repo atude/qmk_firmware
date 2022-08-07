@@ -64,6 +64,9 @@ enum oled_modes {
 #if OLED_BIG_CLOCK_ENABLED
     OLED_CLOCK,
 #endif
+#if OLED_GAMING_MODE_ENABLED
+    OLED_GAMING_MODE,
+#endif
 #if OLED_BONGO_ENABLED
     OLED_BONGO,
 #endif

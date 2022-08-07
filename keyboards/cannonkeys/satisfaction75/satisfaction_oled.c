@@ -14,6 +14,9 @@
 #if OLED_PETS_ENABLED
 #include "components/draw_pets.h"
 #endif
+#if OLED_GAMING_MODE_ENABLED
+#include "components/draw_gaming_mode.h"
+#endif
 #if ATYU_OLED_GIF_ENABLED
 #include "components/draw_gif.h"
 #endif
@@ -41,12 +44,10 @@ oled_rotation_t oled_init_kb(oled_rotation_t rotation) { return OLED_ROTATION_0;
 bool process_record_user(uint16_t keycode, keyrecord_t* record) {
     switch (keycode) {
         case KC_SPC:
-            if (record->event.pressed) {
-                space_pressed = true;
-                // showed_jump   = false;
-            } else {
-                space_pressed = false;
-            }
+            space_pressed = record->event.pressed;
+            break;
+        case KC_TAB:
+            tab_pressed = record->event.pressed;
             break;
         case KC_F22:
         case KC_F23:
@@ -123,6 +124,12 @@ bool oled_task_kb(void) {
         case OLED_CLOCK:
             oled_clear();
             draw_big_clock(show_enc_turn);
+            break;
+#endif
+#if OLED_GAMING_MODE_ENABLED
+        case OLED_GAMING_MODE:
+            oled_clear();
+            draw_gaming_mode(show_enc_turn);
             break;
 #endif
 #if OLED_BONGO_ENABLED
