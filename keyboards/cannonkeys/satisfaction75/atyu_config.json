@@ -23,8 +23,8 @@
         ]
     },
     {
-        "name": "First Person Gaming Mode",
-        "desc": "Visuals for common FPS keys such as WASD, CTRL, tab, shift and space",
+        "name": "Gaming Mode",
+        "desc": "Visuals for common shooter keys such as WASD, CTRL, tab, shift, 1/2/3 and space",
         "key": "OLED_GAMING_MODE_ENABLED",
         "configurable": true,
         "enabledByDefault": false,
