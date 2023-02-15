@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <hal.h>
 #include "led_custom.h"
 #include "satisfaction75.h"
+#include "atyu.h"
 
 static void breathing_callback(PWMDriver *pwmp);
 
@@ -67,7 +68,11 @@ static uint16_t cie_lightness(uint16_t v) {
 
 
 void backlight_init_ports(void) {
+#if KB_OPTIONS_MOUSER_PCB
+  palSetPadMode(GPIOA, 15, PAL_MODE_ALTERNATE(1));
+#else
   palSetPadMode(GPIOA, 6, PAL_MODE_ALTERNATE(1));
+#endif
   pwmStart(&PWMD3, &pwmCFG);
   if(kb_backlight_config.enable){
     if(kb_backlight_config.breathing){

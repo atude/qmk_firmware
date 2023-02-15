@@ -144,6 +144,15 @@
                         }
                     ]
                 }
+            },
+            {
+                "name": "Mouser PCB Compatibility",
+                "desc": "Enables compatibility with custom Mouser PCB",
+                "struct": {
+                    "type": "switch",
+                    "key": "KB_OPTIONS_MOUSER_PCB",
+                    "defaultValue": false
+                }
             }
         ]
     }
