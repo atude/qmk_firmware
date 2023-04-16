@@ -112,42 +112,15 @@
         ]
     },
     {
-        "name": "Polling",
+        "name": "Other options",
         "desc": "",
         "key": "__keyboard_options",
         "configurable": false,
         "enabledByDefault": true,
         "children": [
             {
-                "name": "Polling rate",
-                "desc": "Sets typing responsiveness (lower is faster)",
-                "struct": {
-                    "type": "radio_number",
-                    "radioKey": "KB_OPTIONS_POLLING_RATE",
-                    "defaultValue": 1,
-                    "radioValues": [
-                        {
-                            "name": "1ms",
-                            "value": 1
-                        },
-                        {
-                            "name": "2ms",
-                            "value": 2
-                        },
-                        {
-                            "name": "5ms",
-                            "value": 5
-                        },
-                        {
-                            "name": "10ms",
-                            "value": 10
-                        }
-                    ]
-                }
-            },
-            {
-                "name": "Mouser PCB Compatibility",
-                "desc": "Enables compatibility with custom Mouser PCB",
+                "name": "Enable Mouser PCB Compatibility",
+                "desc": "Compiles the firmware for Mouser PCBs. Keep this off if you are using the standard PCB.",
                 "struct": {
                     "type": "switch",
                     "key": "KB_OPTIONS_MOUSER_PCB",
