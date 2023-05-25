@@ -16,7 +16,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
-#include "atyu.h"
 
 /* Ensure we jump to bootloader if the RESET keycode was pressed */
 #define EARLY_INIT_PERFORM_BOOTLOADER_JUMP TRUE
@@ -35,13 +34,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_ROWS 6
 #define MATRIX_COLS 16
 
-#ifdef KB_OPTIONS_MOUSER_PCB
-    #define MATRIX_COL_PINS { A7, A6, B0, B1, B2, B10, B11, B12, B13, B14, B15, A8, A5, A9, B4, A2 }
-    #define MATRIX_ROW_PINS { B5, B3, A1, A0, A4, A3 }
-#else
-    #define MATRIX_COL_PINS { B1, B2, B10, B11, B12, B13, B14, A8, A9, A10, B0, A7, A5, B5, A15, A1 }
-    #define MATRIX_ROW_PINS { B3, B4, A0, A2, A4, A3 }
-#endif
+// Uncomment the next two lines for DMouse PCB compatibility:
+// #define MATRIX_COL_PINS { A7, A6, B0, B1, B2, B10, B11, B12, B13, B14, B15, A8, A5, A9, B4, A2 }
+// #define MATRIX_ROW_PINS { B5, B3, A1, A0, A4, A3 }
+
+// Uncomment the next two lines for Standard PCB compatibility:
+#define MATRIX_COL_PINS { B1, B2, B10, B11, B12, B13, B14, A8, A9, A10, B0, A7, A5, B5, A15, A1 }
+#define MATRIX_ROW_PINS { B3, B4, A0, A2, A4, A3 }
+// #endif
 
 #define DIODE_DIRECTION COL2ROW
 

@@ -112,15 +112,23 @@
         ]
     },
     {
-        "name": "Other options",
-        "desc": "",
+        "name": "DMouse PCB options",
+        "desc": "Options for DMouse PCB. Please read the notes first before continuing (click the info button)",
         "key": "__keyboard_options",
         "configurable": false,
         "enabledByDefault": true,
+        "notes": [
+            "To complete DMouse compatibility, you must first navigate to the config.h file:",
+            "~/.atyu/qmk_firmware/keyboards/cannonkeys/satisfaction75/config.h",
+            "There will be an option to enable/disable the Mouser PCB;",
+            "Delete or comment out the lines for the standard PCB &",
+            "Uncomment the lines for the DMouse PCB.",
+            "This will fix issues with key mappings."
+        ],
         "children": [
             {
                 "name": "Enable Mouser PCB Compatibility",
-                "desc": "Compiles the firmware for Mouser PCBs. Keep this off if you are using the standard PCB.",
+                "desc": "Please follow the notes before enabling this. Compiles the firmware for Mouser PCBs. Keep this off if you are using the standard PCB.",
                 "struct": {
                     "type": "switch",
                     "key": "KB_OPTIONS_MOUSER_PCB",
