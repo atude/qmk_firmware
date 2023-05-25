@@ -121,8 +121,7 @@
             "To complete DMouse compatibility, you must first navigate to the config.h file:",
             "~/.atyu/qmk_firmware/keyboards/cannonkeys/satisfaction75/config.h",
             "There will be an option to enable/disable the Mouser PCB;",
-            "Delete or comment out the lines for the standard PCB &",
-            "Uncomment the lines for the DMouse PCB.",
+            "Delete or comment out the lines for the standard PCB & uncomment the lines for the DMouse PCB.",
             "This will fix issues with key mappings."
         ],
         "children": [
